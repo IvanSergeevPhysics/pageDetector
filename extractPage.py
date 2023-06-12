@@ -172,10 +172,10 @@ def process(image_format = 'jpg'):
     preprocess_transforms = image_preproces_transforms()
 
     image_path = r"./image.jpg"
-    #image = cv2.imread(image_path, cv2.IMREAD_COLOR)[:, :, ::-1]
-    image_ = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    image = np.stack([image_, image_, image_])
-    image = np.transpose(image, axes=(1, 2, 0))
+    image = cv2.imread(image_path, cv2.IMREAD_COLOR)[:, :, ::-1]
+    # image_ = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    # image = np.stack([image_, image_, image_])
+    # image = np.transpose(image, axes=(1, 2, 0))
 
     document = extract(image_true=image, trained_model=trained_model, preprocess_transforms = preprocess_transforms)
 
