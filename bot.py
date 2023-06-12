@@ -14,8 +14,6 @@ from aiogram.utils.exceptions import PhotoDimensions
 class Extract(StatesGroup):
     extraction = State()
 
-
-
 TOKEN = os.environ.get("BOT_TOKEN")
 
 logging.basicConfig(level=logging.INFO, filename="bot_log.log", filemode="w")
