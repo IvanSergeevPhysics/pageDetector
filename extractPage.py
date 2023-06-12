@@ -163,7 +163,7 @@ def apply_filter(f, img):
         img = unsharp_mask(img, radius=30, amount=1)
     return img
 
-def process():
+def process(image_format = 'jpg'):
     device = "cpu"
 
     CHECKPOINT_MODEL_PATH = r".//models//model_mbv3.pth"
@@ -172,7 +172,10 @@ def process():
     preprocess_transforms = image_preproces_transforms()
 
     image_path = r"./image.jpg"
-    image = cv2.imread(image_path, cv2.IMREAD_COLOR)[:, :, ::-1]
+    #image = cv2.imread(image_path, cv2.IMREAD_COLOR)[:, :, ::-1]
+    image_ = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    image = np.stack([image_, image_, image_])
+    image = np.transpose(image, axes=(1, 2, 0))
 
     document = extract(image_true=image, trained_model=trained_model, preprocess_transforms = preprocess_transforms)
 
@@ -180,7 +183,7 @@ def process():
     fig, ax = plt.subplots()
     #apply_filter('unsharp_mask', document)
     plt.imshow(document/255.0)
-    image_format = 'jpg' # e.g .png, .svg, etc.
-    image_name = 'page.jpg'
+    #image_format = 'jpg' # e.g .png, .svg, etc.
+    image_name = f'page.{image_format}'
     ax.axis('off')
     fig.savefig(image_name, format=image_format, dpi=1200, bbox_inches='tight', pad_inches = 0)

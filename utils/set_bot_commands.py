@@ -6,6 +6,6 @@ async def set_default_commands(dp):
         [
             types.BotCommand("start", "Get bot started"),
             types.BotCommand("help", "Get the list of commands"),
-            #types.BotCommand("plot", "Get graph of your function")
+            types.BotCommand("github", "Get link to the github repo of the project")
         ]
     )
