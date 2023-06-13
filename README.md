@@ -11,5 +11,5 @@ The aiogram framework was used to interact with the Telegram Bot API.
 <img style="display: block; 
            margin-left: auto;
            margin-right: auto;"
-           src="https://github.com/IvanSergeevPhysics/pageDetector/blob/9f57e2c510540b9d11a844be11576d6237e127ee/demo.gif" height="300">
+           src="https://github.com/IvanSergeevPhysics/pageDetector/blob/9f57e2c510540b9d11a844be11576d6237e127ee/demo.gif" height="600">
 </img>
